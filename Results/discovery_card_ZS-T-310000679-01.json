@@ -1,0 +1,371 @@
+{
+  "schema_version": "3.0",
+  "pipeline_version": "EARTH2-1.0.0",
+  "zspace_id": "ZS-T-310000679-01",
+  "tic_id": "310000679",
+  "planet_order": 1,
+  "timestamp_utc": "2026-05-13T09:42:42.845597+00:00",
+  "verdict": "FALSE POSITIVE",
+  "composite_vitality_score": {
+    "value": 0.0,
+    "verdict": "FALSE POSITIVE",
+    "threshold_map": {
+      "PLANET_CANDIDATE": "CVS \u2265 0.80",
+      "LIKELY_PLANET_CANDIDATE": "CVS \u2265 0.55",
+      "AMBIGUOUS": "CVS \u2265 0.35",
+      "FALSE_POSITIVE": "CVS  < 0.35"
+    },
+    "earth2_bonus": 1.0,
+    "proof": "CVS = \u03a3(w\u00b7S)/\u03a3(w) = 0.000000",
+    "components": [
+      {
+        "name": "periodicity",
+        "weight": 0.97,
+        "score": 0.185505,
+        "weighted": 0.179939,
+        "proof": "BLS | period=0.50806 d, depth=0.000003, dur=10.00 h, SNR=9.23 | 9.23 > 4.5 \u2192 PASS | FAP | z=(peak-median)/std=(0.0000-0.0000)/0.0000=11.56 | p_single=3.390e-31, N=2533 \u2192 FAP=1-(1-p)^N=0.000e+00 | threshold=1e-4 | PASS | GATE_PASS | FAP=0.000e+00<1e-03 AND SNR=9.23>4.5 \u2192 S_P=0.1855",
+        "flags": [
+          "SUSPECT_DURATION | \u03c4/P=0.8201 > 0.15 \u2014 possible grazing or EB",
+          "SHALLOW_TRANSIT | depth=0.000003 < 10 ppm \u2014 near noise floor"
+        ]
+      },
+      {
+        "name": "depth",
+        "weight": 0.83,
+        "score": 0.0,
+        "weighted": 0.0,
+        "proof": "DEPTH_CONSISTENCY | n=487, \u03bc=-0.00000, \u03c3=0.00002 | CV=24278599.0346 | S_\u03b4 = max(0, 1-CV/0.10) = max(0, 1-24278599.0346/0.10) = 0.0000",
+        "flags": [
+          "HIGH_CV | CV=24278599.0346 > 0.10 \u2192 inconsistent depths",
+          "MCMC_NOISE | S_\u03b4 \u00d7 0.7 due to non-Gaussian posteriors"
+        ]
+      },
+      {
+        "name": "limb",
+        "weight": 0.61,
+        "score": 0.363468,
+        "weighted": 0.221716,
+        "proof": "LIMB_SHAPE | batman fit: rp/rs=0.00183, a/rs=2.00, inc=89.00\u00b0 | RMS_total=0.00002 | RMS_centre=0.00002, RMS_wings=0.00002 | ratio=wings/centre=1.045 | S_\u03c4=0.3635",
+        "flags": []
+      },
+      {
+        "name": "stellar",
+        "weight": 0.31,
+        "score": 0.67762,
+        "weighted": 0.210062,
+        "proof": "STELLAR_CONTEXT | CENTROID_TPF | insufficient in/out points \u2192 not flagged | SECONDARY | insufficient data around phase 0.5 \u2192 not flagged | DENSITY_CHECK | a/R\u2605_transit=2.00, a/R\u2605_catalog=3.81 | deviation=47.6% | threshold=15% | FLAGGED \u2014 DENSITY MISMATCH | MULTI_SECTOR | Only 1 sector available for TIC 310000679 \u2192 no cross-check possible | contamination=0.0022 | S_S=0.6776",
+        "flags": [
+          "DENSITY_MISMATCH | deviation=47.6%",
+          "DENSITY_PENALTY | \u00d70.678"
+        ]
+      }
+    ],
+    "proof_chain": [
+      "  [periodicity] w=0.97 * S=0.1855 = 0.1799 | BLS | period=0.50806 d, depth=0.000003, dur=10.00 h, SNR=9.23 | 9.23 > 4.5 \u2192 PASS | FAP | z=(peak-median)/std=(0.0000-0.0000)/0.0000=11.56 | p_single=3.390e-31, N=2533 \u2192 FAP=1-(1-p)^N=0.000e+00 | threshold=1e-4 | PASS | GATE_PASS | FAP=0.000e+00<1e-03 AND SNR=9.23>4.5 \u2192 S_P=0.1855",
+      "  [depth] w=0.83 * S=0.0000 = 0.0000 | DEPTH_CONSISTENCY | n=487, \u03bc=-0.00000, \u03c3=0.00002 | CV=24278599.0346 | S_\u03b4 = max(0, 1-CV/0.10) = max(0, 1-24278599.0346/0.10) = 0.0000",
+      "  [limb] w=0.61 * S=0.3635 = 0.2217 | LIMB_SHAPE | batman fit: rp/rs=0.00183, a/rs=2.00, inc=89.00\u00b0 | RMS_total=0.00002 | RMS_centre=0.00002, RMS_wings=0.00002 | ratio=wings/centre=1.045 | S_\u03c4=0.3635",
+      "  [stellar] w=0.31 * S=0.6776 = 0.2101 | STELLAR_CONTEXT | CENTROID_TPF | insufficient in/out points \u2192 not flagged | SECONDARY | insufficient data around phase 0.5 \u2192 not flagged | DENSITY_CHECK | a/R\u2605_transit=2.00, a/R\u2605_catalog=3.81 | deviation=47.6% | threshold=15% | FLAGGED \u2014 DENSITY MISMATCH | MULTI_SECTOR | Only 1 sector available for TIC 310000679 \u2192 no cross-check possible | contamination=0.0022 | S_S=0.6776",
+      "  CVS_raw = 0.6117 / 2.7200 = 0.2249",
+      "  HARD_REJECT: DURATION_TOO_LONG: 82.0% of period | CVS forced to 0.0"
+    ]
+  },
+  "orbital_mechanics": {
+    "period_days": {
+      "value": 0.508063,
+      "proof": "BLS best-fit period = 0.508063 d"
+    },
+    "semi_major_axis_au": {
+      "value": 0.010361,
+      "proof": "Kepler III (IAU 2015): a = (G\u00b7M\u00b7T\u00b2/4\u03c0\u00b2)^(1/3) | T=0.5081 d, M=0.5748 M\u2609 \u2192 a=0.01036 AU"
+    },
+    "equilibrium_temperature_k": {
+      "value": 1228.86,
+      "proof": "T_eq (IAU 2015): T_eff\u00b7\u221a(R\u2605/2a)\u00b7(1-A)^0.25 | T_eff=3711.0 K, R\u2605=0.584 R\u2609, a=0.01036 AU, A=0.30 \u2192 T_eq=1228.86 K"
+    },
+    "planet_radius_earth": {
+      "value": 0.1167,
+      "proof": "R_p (IAU 2015): R\u2605\u00b7\u221a\u03b4 | \u03b4=0.000003, R\u2605=0.584 R\u2609 \u2192 R_p=0.117 R\u2295"
+    },
+    "transit_depth_ppm": {
+      "value": 3.35,
+      "proof": "transit_depth = 3.35 ppm"
+    },
+    "albedo_assumed": 0.3
+  },
+  "bls_detection": {
+    "period_days": 0.5080629695575457,
+    "transit_depth": 3.354965387725173e-06,
+    "transit_duration_hours": 10.0,
+    "t0": 1683.5977569930997,
+    "snr": {
+      "value": 9.2304,
+      "proof": "9.23 > 4.5 \u2192 PASS"
+    },
+    "fap": {
+      "value": 0.0,
+      "proof": "FAP=0.000e+00 < 1e-03 \u2192 PASS"
+    },
+    "n_trial_periods": 2533,
+    "detection_gate": "PASS",
+    "proof": "BLS | period=0.50806 d, depth=0.000003, dur=10.00 h, SNR=9.23 | 9.23 > 4.5 \u2192 PASS | FAP | z=(peak-median)/std=(0.0000-0.0000)/0.0000=11.56 | p_single=3.390e-31, N=2533 \u2192 FAP=1-(1-p)^N=0.000e+00 | threshold=1e-4 | PASS | GATE_PASS | FAP=0.000e+00<1e-03 AND SNR=9.23>4.5 \u2192 S_P=0.1855",
+    "flags": [
+      "SUSPECT_DURATION | \u03c4/P=0.8201 > 0.15 \u2014 possible grazing or EB",
+      "SHALLOW_TRANSIT | depth=0.000003 < 10 ppm \u2014 near noise floor"
+    ]
+  },
+  "transit_audits": {
+    "even_odd": {
+      "n_even": 244,
+      "n_odd": 243,
+      "depth_even": -2.1e-06,
+      "depth_odd": -2e-07,
+      "delta_sigma": 0.8473,
+      "eb_flagged": {
+        "value": false,
+        "proof": "\u0394\u03c3=0.85 > 3.0 \u2192 PASS"
+      },
+      "proof": "EVEN_ODD | even: n=244, \u03bc=-0.00000\u00b10.00000 | odd:  n=243,  \u03bc=-0.00000\u00b10.00000 | \u0394\u03c3=0.85 | threshold=2.5 | 0.85 > 2.5 \u2192 EB_FLAG=NO"
+    },
+    "depth_consistency": {
+      "n_transits": 487,
+      "mean_depth": -1.1e-06,
+      "std_depth": 2.43e-05,
+      "cv": {
+        "value": 24278599.034571,
+        "proof": "CV = \u03c3/\u03bc = 0.00002/-0.00000 = 24278599.034571"
+      },
+      "s_depth": {
+        "value": 0.0,
+        "proof": "S_\u03b4 = max(0, 1-CV/0.10) = max(0, 1-24278599.0346/0.10) = 0.0000"
+      },
+      "proof": "DEPTH_CONSISTENCY | n=487, \u03bc=-0.00000, \u03c3=0.00002 | CV=24278599.0346 | S_\u03b4 = max(0, 1-CV/0.10) = max(0, 1-24278599.0346/0.10) = 0.0000",
+      "flags": [
+        "HIGH_CV | CV=24278599.0346 > 0.10 \u2192 inconsistent depths",
+        "MCMC_NOISE | S_\u03b4 \u00d7 0.7 due to non-Gaussian posteriors"
+      ]
+    },
+    "limb_shape": {
+      "model": "Mandel-Agol (batman)",
+      "rp_rs": 0.001832,
+      "a_rs": 2.0,
+      "inclination_deg": 89.0,
+      "limb_darkening": {
+        "u1": 0.3,
+        "u2": 0.1
+      },
+      "residual_rms": 1.82e-05,
+      "shape_analysis": {
+        "residual_centre": 1.8e-05,
+        "residual_wings": 1.88e-05,
+        "shape_ratio": {
+          "value": 1.0452,
+          "proof": "ratio = wings_rms/centre_rms = 0.00002/0.00002 = 1.0452 | ratio>1 \u2192 U-shape \u2192 PLANET-LIKE"
+        }
+      },
+      "s_limb": {
+        "value": 0.363468,
+        "proof": "LIMB_SHAPE | batman fit: rp/rs=0.00183, a/rs=2.00, inc=89.00\u00b0 | RMS_total=0.00002 | RMS_centre=0.00002, RMS_wings=0.00002 | ratio=wings/centre=1.045 | S_\u03c4=0.3635"
+      },
+      "flags": []
+    }
+  },
+  "stellar_context": {
+    "stellar_metadata": {
+      "source": "MAST_TIC_v8.2",
+      "tic_version": "8.2",
+      "stellar_mass_solar": 0.574817,
+      "stellar_radius_solar": 0.58398,
+      "stellar_teff_k": 3711.0,
+      "stellar_logg": 4.6648,
+      "stellar_density_cgs": 4.063856249501466,
+      "contamination_ratio": 0.002222269,
+      "gaia_parallax_mas": 58.1724
+    },
+    "centroid_shift_test": {
+      "shift_sigma": 0.0,
+      "is_flagged": false,
+      "method": "tpf_vector",
+      "proof": "CENTROID_TPF | insufficient in/out points \u2192 not flagged"
+    },
+    "secondary_eclipse_search": {
+      "depth_at_phase_0.5": 0.0,
+      "snr_at_phase_0.5": 0.0,
+      "is_flagged": false,
+      "proof": "SECONDARY | insufficient data around phase 0.5 \u2192 not flagged"
+    },
+    "density_constraint": {
+      "a_rs_transit": 2.0,
+      "a_rs_catalog": 3.815,
+      "deviation_percent": 47.58,
+      "is_flagged": true,
+      "proof": "DENSITY_CHECK | a/R\u2605_transit=2.00, a/R\u2605_catalog=3.81 | deviation=47.6% | threshold=15% | FLAGGED \u2014 DENSITY MISMATCH"
+    },
+    "multi_sector_consistency": {
+      "n_sectors_available": 1,
+      "n_sectors_consistent": 1,
+      "sectors_checked": [
+        0
+      ],
+      "confidence_boost": 1.0,
+      "is_consistent": true,
+      "proof": "MULTI_SECTOR | Only 1 sector available for TIC 310000679 \u2192 no cross-check possible"
+    },
+    "s_stellar": {
+      "value": 0.67762,
+      "proof": "STELLAR_CONTEXT | CENTROID_TPF | insufficient in/out points \u2192 not flagged | SECONDARY | insufficient data around phase 0.5 \u2192 not flagged | DENSITY_CHECK | a/R\u2605_transit=2.00, a/R\u2605_catalog=3.81 | deviation=47.6% | threshold=15% | FLAGGED \u2014 DENSITY MISMATCH | MULTI_SECTOR | Only 1 sector available for TIC 310000679 \u2192 no cross-check possible | contamination=0.0022 | S_S=0.6776"
+    },
+    "flags": [
+      "DENSITY_MISMATCH | deviation=47.6%",
+      "DENSITY_PENALTY | \u00d70.678"
+    ]
+  },
+  "ingestion_audit": {
+    "tic_id": "310000679",
+    "sector": 0,
+    "n_points_raw": 177266,
+    "n_points_cleaned": 171094,
+    "n_dropped_quality": 5169,
+    "n_dropped_sigma": 1003,
+    "coverage_fraction": {
+      "value": 0.9652,
+      "proof": "coverage = 171094 / 177266 = 0.9652"
+    },
+    "cadence_days": 0.001389,
+    "audit_log": [
+      "FETCH | target=TIC 310000679 mission=TESS exptime=short author=SPOC",
+      "FETCH | Downloaded 177266 cadences across 10 sectors.",
+      "FETCH | Cached FITS for sector 0",
+      "FETCH | Cached FITS for sector 0",
+      "FETCH | Cached FITS for sector 0",
+      "FETCH | Cached FITS for sector 0",
+      "FETCH | Cached FITS for sector 0",
+      "FETCH | Cached FITS for sector 0",
+      "FETCH | Cached FITS for sector 0",
+      "FETCH | Cached FITS for sector 0",
+      "FETCH | Cached FITS for sector 0",
+      "FETCH | Cached FITS for sector 0",
+      "RAW | 177266 cadences downloaded",
+      "QUALITY_MASK | dropped 5169 flagged cadences | remaining 172097",
+      "SIGMA_CLIP | sigma_upper=3.0 (one-sided, upward only) | dropped 1003 upward outliers (0.58%) | transit dips preserved by design",
+      "NORMALIZE | median_flux=1.0000 \u2192 flux_norm median \u2248 1.0",
+      "SAVGOL | period_input=None d | cadence=0.00139 d | window=2161 pts | polyorder=3",
+      "CONSISTENCY_CHECK | PASS"
+    ]
+  },
+  "all_flags": [
+    "SUSPECT_DURATION | \u03c4/P=0.8201 > 0.15 \u2014 possible grazing or EB",
+    "SHALLOW_TRANSIT | depth=0.000003 < 10 ppm \u2014 near noise floor",
+    "HIGH_CV | CV=24278599.0346 > 0.10 \u2192 inconsistent depths",
+    "MCMC_NOISE | S_\u03b4 \u00d7 0.7 due to non-Gaussian posteriors",
+    "DENSITY_MISMATCH | deviation=47.6%",
+    "DENSITY_PENALTY | \u00d70.678"
+  ],
+  "truthimatics_seal": "TRUTHIMATICS-SEAL | CVS=0.0% | WHITE-BOX | NO-ML | NO-IMPUTATION | PHYSICS-DERIVED | Axiom-ZSpace v1.0",
+  "earth2_metrics": {
+    "earth_similarity_index": 0.2639,
+    "earth2_cvs_bonus": 1.0,
+    "in_habitable_zone": false,
+    "earth_like_radius": false,
+    "planet_radius_earth": 0.1167,
+    "equilibrium_temp_k": 1228.86,
+    "proof": "ESI=0.2639 | R=0.117R\u2295 | Teq=1228.9K | bonus=\u00d71.0000"
+  },
+  "planet_characterization": {
+    "planet_mass_earth": 0.01,
+    "composition_regime": "Rocky/Earth-like",
+    "surface_gravity_m_s2": 7.198,
+    "surface_gravity_earth_g": 0.734,
+    "escape_velocity_kms": 3.273,
+    "insolation_flux_s_earth": 1585.1726,
+    "atmospheric_scale_height_km": 49.0,
+    "tidal_locking_years": "3.60e+11",
+    "tidally_locked": false,
+    "hill_sphere_au": 2.7e-05,
+    "transit_probability_pct": 26.21,
+    "temperatures": {
+      "equilibrium_earth_albedo_k": 1228.9,
+      "bare_rock_albedo_0_k": 1343.5,
+      "surface_estimate_k": 1228.9
+    }
+  },
+  "habitability_assessment": {
+    "earth_similarity_index": 0.2639,
+    "planet_habitability_index": 0.0622,
+    "human_habitability_pct": 10.15,
+    "water_retention_score": 0.0382,
+    "atmosphere_retention_score": 0.03,
+    "liquid_water_potential": "LOW",
+    "atmosphere_type": "Minimal (too hot)",
+    "habitable_zone_classification": "Too Hot",
+    "habitable_zone_conservative": false,
+    "habitable_zone_optimistic": false
+  },
+  "earth2_confidence": {
+    "eci": 0.3798,
+    "cvs_contrib": 0,
+    "esi_contrib": 0.2639,
+    "phi_contrib": 0.0622,
+    "hhp_contrib": 0.1015,
+    "hypothesis_stage": "noise",
+    "hypothesis_desc": "No significant signal detected",
+    "uncertainty_band": 0.25,
+    "evidence_count": 4,
+    "proof_eci": "ECI = 1-(1-CVS=1.0000)\u00d7(1-ESI=0.7361)\u00d7(1-PHI=0.9378)\u00d7(1-HHP=0.8985) = 0.3798",
+    "decomposition": [
+      "  CVS=0.0000  (detection confidence)",
+      "  ESI=0.2639    (physical similarity to Earth)",
+      "  PHI=0.0622    (potential for life)",
+      "  HHP=0.1015  (human habitability)",
+      "  \u2192 ECI=0.3798"
+    ]
+  },
+  "fp_filters_v2": {
+    "ingress_egress_test": {
+      "ingress_fraction": 0.2,
+      "flat_fraction": 0.6,
+      "is_v_shape": false,
+      "fp_risk": "VERY_LOW",
+      "proof": "INGRESS_EGRESS | depth=0.00000 | ingress_frac=0.200, flat_frac=0.600 | T_ingress=2.00h, T_flat=6.00h, T_total=10.00h | shape=U-SHAPE (PLANET) | FP_risk=VERY_LOW",
+      "flags": []
+    },
+    "density_constraint": {
+      "a_rs_transit": 2.0,
+      "a_rs_catalog": 3.814995187486143,
+      "deviation_percent": 47.58,
+      "is_flagged": true,
+      "proof": "DENSITY_CHECK | a/R\u2605_transit=2.00, a/R\u2605_catalog=3.81 | deviation=47.6% | threshold=15% | FLAGGED \u2014 DENSITY MISMATCH"
+    },
+    "multi_sector_consistency": {
+      "n_sectors_available": 1,
+      "n_sectors_consistent": 1,
+      "sectors_checked": [
+        0
+      ],
+      "confidence_boost": 1.0,
+      "is_consistent": true,
+      "proof": "MULTI_SECTOR | Only 1 sector available for TIC 310000679 \u2192 no cross-check possible"
+    },
+    "centroid_method": "tpf_vector",
+    "hard_physical_filters": {
+      "passed": false,
+      "rejection": "DURATION_TOO_LONG: 82.0% of period",
+      "cvs_penalty": 1.0,
+      "flags": [
+        "HARD_REJECT_DURATION"
+      ],
+      "proof": "Transit duration is 82.0% of orbital period. Physically impossible for a planetary transit."
+    },
+    "mcmc_validation": {
+      "n_walkers": 10,
+      "n_steps": 200,
+      "acceptance_fraction": 0.5125,
+      "is_gaussian": false,
+      "skewness_max": 1.2811935620342012,
+      "kurtosis_max": 2.4269609156106666,
+      "proof": "MCMC | walkers=10, steps=200, burn-in=80 | acceptance=0.512 | depth=0.00001\u00b10.00001 | skew_max=1.28, kurt_max=2.43 | NON-GAUSSIAN \u2014 NOISE INDICATOR",
+      "flags": [
+        "NON_GAUSSIAN_POSTERIOR | skew_max=1.28, kurt_max=2.43"
+      ]
+    }
+  }
+}
