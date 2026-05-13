@@ -694,4 +694,4 @@ For technical audits or partnerships, please reach out via [GitHub Issues](https
 
 ## License
 
-This project is licensed under the MIT License. The underlying TESS data is publicly available from the MAST archive at the Space Telescope Science Institute.
+This project is licensed under the Axiom Public License. The underlying TESS data is publicly available from the MAST archive at the Space Telescope Science Institute.
