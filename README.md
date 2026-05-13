@@ -23,18 +23,6 @@ This repository is part of the broader **Axiom-Zspace** initiative — a fully t
 | **Second Milestone** | May 2, 2026 | **5,845 new exoplanet candidates** from Sectors 7, 36, 41, 42, 55, 67 (ongoing) |
 | **Performance Benchmark** | — | 92.7% detection rate on single-core CPU (~4 hours for 619 signals) |
 
-### Performance Benchmark (Axiom-Zspace Kernel Stress Test)
-
-| Metric | Value |
-|:---|---:|
-| **Hardware Environment** | Single-Core CPU |
-| **Total Processing Time** | ~4 Hours |
-| **Total Signals Tested** | 619 |
-| **Confirmed Detections** | 574 (**92.7%**) |
-| **False Negatives (Missed)** | 3 (**0.5%**) |
-| **Technical Failures** | 42 (6.8%) |
-
-> A 92.7% detection rate on a single-core processor within 4 hours demonstrates the extreme computational efficiency of the Truthimatics logic compared to traditional probabilistic models — and this is before GPU acceleration.
 
 ### The Big Picture
 
@@ -43,16 +31,6 @@ This repository is part of the broader **Axiom-Zspace** initiative — a fully t
 **Why does this exist?** Traditional exoplanet detection pipelines (including NASA's own) are often opaque, relying on neural networks, random forest classifiers, or proprietary algorithms that are difficult to audit. Axiom-Zspace and Axiom-Earth2 were created to demonstrate that **a fully transparent, white-box system can achieve competitive results** while maintaining complete auditability.
 
 **Philosophy:** Every signal must have a traceable, verifiable mathematical proof. No black boxes. No hidden layers. No proprietary secrets.
-
-### Special Acknowledgments
-
-Made possible through generous free-tier compute provided by:
-
-- **[Google Colab](https://colab.research.google.com)**
-- **[Kaggle Kernels](https://www.kaggle.com)**
-- **[Lightning.ai](https://lightning.ai)**
-
-Data sourced from **[NASA & The TESS Mission](https://asd.gsfc.nasa.gov/archive/tess/)** via the **[MAST Archive](https://archive.stsci.edu/)**.
 
 ---
 
