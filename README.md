@@ -2,7 +2,10 @@
 
 > TIC 436235326 — Temperate Water World
 > Period: 30.25 days | Teq: 290K | ESI: 0.734
+> NASA confirmed planets tested: 619
+> Average CVS on confirmed planets: ~0.40
 > CVS: 0.8272 | Zero ML | Full proof chain
+> = 2x above confirmed planet baseline
 
 ---
 
