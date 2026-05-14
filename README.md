@@ -1,13 +1,68 @@
-# Axiom-Earth2 — Exoplanet Discovery Pipeline
+# Axiom-Earth2
 
-> TIC 436235326 — Temperate Water World
-> Period: 30.25 days | Teq: 290K | ESI: 0.734
-> NASA confirmed planets tested: 619
-> Average CVS on confirmed planets: ~0.40
-> CVS: 0.8272 | Zero ML | Full proof chain
-> = 2x above confirmed planet baseline
+## 92.7% detection rate on 619 NASA-confirmed planets.
+## 3 misses. Zero hallucinations. Single CPU core. No ML.
 
 ---
+
+| Metric | Value |
+|---|---|
+| Confirmed planets tested | 619 |
+| Detected | 574 (92.7%) |
+| False negatives | 3 (0.48%) |
+| False positives on known planets | 0 |
+| Inference engine | No ML · No GPU · No cloud |
+| Hardware | Single CPU core |
+| All benchmarks | Public · Reproducible · Verifiable |
+
+→ Benchmark source: [Axiom-Zspace PublicBenchmarks](https://github.com/Zierax/Axiom-Zspace/blob/main/benchmarks/20260426_152109/detailed_analysis.md)
+
+---
+
+## Primary Discovery — TIC 436235326
+
+> **A temperate water world. Physics-derived. Zero black boxes.**
+
+| Parameter | Value |
+|---|---|
+| Orbital Period | 30.25 days |
+| Equilibrium Temperature | 290K (~Earth's 255K) |
+| Earth Similarity Index | 0.734 |
+| Composite Vitality Score | **0.8272** |
+| Pipeline baseline (619 confirmed planets) | ~0.40 avg CVS |
+| **Signal strength vs baseline** | **2× above confirmed planet average** |
+| Transit shape | U-shaped (planetary) |
+| False positive filters | All passed |
+| MCMC posteriors | Gaussian — consistent signal |
+| SNR | 16.46 |
+| False alarm probability | ~0 |
+
+**Every number above has a closed-form proof. 
+Verify in 3 lines of Python:**
+
+```python
+import json
+card = json.load(open("Results/discovery_card_ZS-T-436235326-01.json"))
+print(card["composite_vitality_score"]["proof"])
+```
+
+---
+
+## Why This Pipeline Exists
+
+NASA's TESS pipeline uses proprietary algorithms.
+ML-based approaches cannot explain why a signal was classified.
+False positives are silently discarded across the field.
+
+**Axiom-Earth2 does the opposite:**
+- Every target documented — 1 candidate, 14 likely, 20 ambiguous, 
+  228 false positives
+- Every score has a closed-form mathematical proof
+- No imputation. No hidden layers. No statistical guessing.
+- A 17-year-old built this on a single CPU in Cairo, Egypt.
+
+*"If you cannot explain the decision, you do not understand 
+the signal."*
 
 ## Resource: Axiom-Zspace (The Parent Project)
 
