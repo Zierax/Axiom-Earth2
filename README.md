@@ -2,8 +2,9 @@
 
 **Pipeline:** EARTH2-1.0.0 · **Schema:** v3.0 · **Data Source:** NASA TESS (SPOC) · **License:** MIT
 
-> Before all else: I recognize that in a domain as complex and data-invariant as astrophysics, mathematical discrepancies or logical oversights may exist in these early results. Axiom-Zspace is a mission to build the first fully transparent, white-box system for exoplanet discovery. While it is a work in progress, I am committed to absolute transparency and invite the community to audit and correct any findings. I am open to technical collaborations under NDA to further refine these logical kernels.
-> — *Axiom-Zspace mission statement (Updated: 2/May/2026)*
+> TIC 436235326 — Temperate Water World
+> Period: 30.25 days | Teq: 290K | ESI: 0.734
+> CVS: 0.8272 | Zero ML | Full proof chain
 
 ---
 
