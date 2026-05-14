@@ -1,7 +1,5 @@
 # Axiom-Earth2 — Exoplanet Discovery Pipeline
 
-**Pipeline:** EARTH2-1.0.0 · **Schema:** v3.0 · **Data Source:** NASA TESS (SPOC) · **License:** MIT
-
 > TIC 436235326 — Temperate Water World
 > Period: 30.25 days | Teq: 290K | ESI: 0.734
 > CVS: 0.8272 | Zero ML | Full proof chain
