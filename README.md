@@ -339,13 +339,13 @@ jq 'select(.earth2_metrics.in_habitable_zone == true) |
 
 ---
 
-## Milestones
+##[Axiom-Zspace](https://github.com/Zierax/Axiom-Zspace) Milestones
 
 | Date | Result |
 |---|---|
 | April 26, 2026 | 2,886 new candidates — TESS Sectors 7, 41, 42 (24-hour scan) |
 | May 2, 2026 | 5,845 new candidates — Sectors 7, 36, 41, 42, 55, 67 |
-| May 13, 2026 | 619-planet benchmark — 92.7% detection rate, single CPU core |
+| - | 619-planet benchmark — 92.7% detection rate, single CPU core |
 
 ---
 
